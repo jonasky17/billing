@@ -82,20 +82,16 @@ p {
     font-size: 18px;
 }
 
-.tbl-header.desc,
-.summarry-desc{
+.tbl-header.desc{
     width:70%;
 }
-.tbl-header.price,
-.summary-total{
+.tbl-header.price{
     width:10%;
 }
-.tbl-header.qty,
-.summary-qty{
+.tbl-header.qty{
     width:10%;
 }
-.tbl-header.total,
-.summary-total{
+.tbl-header.total{
     width:10%;
 }
 
@@ -112,7 +108,7 @@ p {
     padding-left:1rem;
     padding-right:1rem; 
     border:none;
-    border-top:1px solid red;
+    border-top:1px solid #6ba4ff;
     /* border:1px solid #6ba4ff; */
     /* background: #6ba4ff; */
  }
@@ -121,6 +117,7 @@ p {
 
 .tbl.particulars>tbody tr:hover {background-color: #ddd;}
 
-.tbl.summarry{
-
+.tbl.particulars>thead>tr>td,
+.tbl.particulars>tbody>tr>td{
+    border:2px solid white;
 }
