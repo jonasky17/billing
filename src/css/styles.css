@@ -185,10 +185,23 @@ p {
     flex:50%;
 }
 
+.signature-note{
+    display:block;
+}
+
 .signature{
     width: 75%;
     border:0;
     border-bottom: 1px solid black;
+}
+
+.notes-container{
+    margin-top: 24px;
+}
+
+.notes{
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
 }
 @media print{
     #save{

@@ -93,20 +93,6 @@
                 </tfoot>
             </table>
         </div>
-<!-- 
-        <div class="notes-container">
-            <p class="label-notes">NOTES:</p>
-            <p class="notes">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.
-            </p>
-        </div> -->
 
         <div class="received-container">
             <div class="row">
@@ -114,7 +100,8 @@
                     <div class="signature-container">
                         <input type="text" class="signature">
                     </div>
-                    <label class="label">Received by</label>
+                    <span class="text sginature-note">(Signature over printed name)</span>
+                    <label class="label" style="display: block;">Received by</label>
                 </div>
                 <div class="container-date">
                     <div class="signature-container">
@@ -124,9 +111,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="notes-container">
+            <p class="label label-notes">NOTES:</p>
+            <p class="notes">
+                Please make your check payments payable to <b>*** TABS ACCOUNT NAME HERE ***</b>
+            </p>
+        </div>
+
         <div class="btn-container">
             <button id="save" class="btn save green" onclick="save()">Save as PDF</button>
         </div>
+
+
     </div>
     <script src="../js/bs.js"></script>
 </body>
