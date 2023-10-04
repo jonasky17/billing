@@ -166,18 +166,30 @@ p {
     margin-top:24px;
 }
 
-.wrapper{
-    /* height: 842px;
-    width: 595px; */
-}
 .body { height:297mm; width:210mm; margin-left:auto; margin-right:auto; }
 
-/* @page{
-    size: 21cm 29.7cm;
-    margin-left:auto;
-    margin-right:auto;
-} */
+.row{
+    display: flex;
+    gap: 10px;
+    /* width: 100%; */
+    flex-direction: row;
+    text-align:center;
+    margin-top:150px;
+}
 
+.container-name{
+    flex:50%;
+}
+
+.container-date{
+    flex:50%;
+}
+
+.signature{
+    width: 75%;
+    border:0;
+    border-bottom: 1px solid black;
+}
 @media print{
     #save{
         display:none;
