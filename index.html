@@ -8,34 +8,40 @@
 
 <body>
     <div class="content">
-        <form>
+        <form id="form_generate">
             <div>
-                <h1>Create Billing Statement</h1>
+                <h1>Billing Statement Generator</h1>
             </div>
             <div class="form-container">
                 <div class="customer-details">
                     <div class="row">
                         <div class="form-group">
                             <label class="form-label">Customer: </label>
-                            <input class="form-input" value="St. Martin" placeholder="name/company">
+                            <input class="form-input" value="St. Martin" placeholder="name/company" name="customer_name">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label class="form-label">Customer Address: </label>
-                            <textarea class="form-input">Crystal Cave</textarea>
+                            <textarea class="form-input" name="customer_address">Crystal Cave</textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label>Customer email: </label>
-                            <input class="form-input" value="sample@email.com">
+                            <input class="form-input" value="sample@email.com" name="customer_email">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label class="form-label">Customer contact: </label>
-                            <input class="form-input" value="+631234567890">
+                            <input class="form-input" value="+631234567890" name="customer_contact">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="form-label">Billing Date: </label>
+                            <input class="form-input"placeholder="mm/dd/yyyy" name="billing_date" type="date" id="billing_date">
                         </div>
                     </div>
                 </div>
@@ -52,23 +58,23 @@
                         <tbody id="items">
                             <tr>
                                 <td>
-                                    <input class="tbl-input">
+                                    <input class="tbl-input" name="description[]">
                                 </td>
                                 <td>
-                                    <input class="tbl-input">
+                                    <input class="tbl-input" name="price[]">
                                 </td>
                                 <td>
-                                    <input class="tbl-input">
+                                    <input class="tbl-input" name="qty[]">
                                 </td>
                                 <td>
-                                    <input class="tbl-input">
+                                    <input class="tbl-input" name="total[]">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="btn-add-container">
                         <button id="add_item" onclick="addItem()" class="btn addItem green">Add Item</button>
-                        <button class="btn generate blue" onclick="generate()">Generate Billing</button>
+                        <button id="btn_generate" class="btn generate blue" onclick="generate()">Generate Billing</button>
                     </div>
                 </div>
             </div>
