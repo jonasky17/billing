@@ -17,25 +17,25 @@
                     <div class="row">
                         <div class="form-group">
                             <label class="form-label">Customer: </label>
-                            <input class="form-input" value="St. Martin" placeholder="name/company" name="customer_name">
+                            <input class="form-input" value="ST. MARTINS SCHOOL INC." placeholder="name/company" name="customer_name">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label class="form-label">Customer Address: </label>
-                            <textarea class="form-input" name="customer_address">Crystal Cave</textarea>
+                            <textarea class="form-input customer-address" name="customer_address">Mission Road, Crystal Cave Road, Baguio City 2600</textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label>Customer email: </label>
-                            <input class="form-input" value="sample@email.com" name="customer_email">
+                            <input class="form-input" value="smsbaguio@gmail.com" name="customer_email" placeholder="sample@email.com">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                             <label class="form-label">Customer contact: </label>
-                            <input class="form-input" value="+631234567890" name="customer_contact">
+                            <input class="form-input" value="(074) 4463016" name="customer_contact">
                         </div>
                     </div>
                     <div class="row">
@@ -61,16 +61,22 @@
                                     <input class="tbl-input" name="description[]">
                                 </td>
                                 <td>
-                                    <input class="tbl-input" name="price[]">
+                                    <input class="tbl-input number price" name="price[]" type="number" onchange="computePrice(this)">
                                 </td>
                                 <td>
-                                    <input class="tbl-input" name="qty[]">
+                                    <input class="tbl-input number qty" name="qty[]" type="number" onchange="computeQty(this)">
                                 </td>
                                 <td>
-                                    <input class="tbl-input" name="total[]">
+                                    <input class="tbl-input number total" name="total[]" type="number" onchange="getTotal()">
                                 </td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="td-grand-total"><label class="form-label label-grand-total">Total:</label></td>
+                                <td class="td-grand-total"><label id="grand_total" class="form-label"></label></td>
+                            </tr>
+                        </tfoot>
                     </table>
                     <div class="btn-add-container">
                         <button id="add_item" onclick="addItem()" class="btn addItem green">Add Item</button>

@@ -121,3 +121,29 @@ p {
 .tbl.particulars>tbody>tr>td{
     border:2px solid white;
 }
+
+.body-details{
+    margin-top: 24px;
+}
+
+.btn{
+    width: 190px;
+    border-radius: none;
+    border:none;
+    background: none;
+    box-shadow: none;
+}
+
+.btn.green{
+    font-family: 'Open Sans', sans-serif;
+    background: #149636;
+    color: white;
+    height: 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-container{
+    text-align: right;
+    margin-top:24px;
+}

@@ -106,3 +106,32 @@ form{
 .tbl.billing>tbody tr:nth-child(even){background-color: #f2f2f2;}
 
 .tbl.billing>tbody tr:hover {background-color: #ddd;}
+
+.td-grand-total{
+    text-align: right;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.td-grand-total{
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.tbl-input.number{
+    text-align: right;
+    padding-right:5px;
+}
+
+.customer-address{
+    height:100px;
+}

@@ -19,9 +19,9 @@
         </div>
         <div class="header-billing-details-container">
             <p class="label billing-no">
-                Billing No
+                Billing ID
             </p>
-            <p class="text billing-no">
+            <p class="text billing-no" id="billing_id">
                 123
             </p>
             <p class="label billing-date">
@@ -54,8 +54,8 @@
                     <td class="text tbl-header total">Total</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody id="bs_items">
+                <!-- <tr>
                     <td class="text">test</td>
                     <td class="currency price">100.00</td>
                     <td class="currency qty">1</td>
@@ -81,12 +81,12 @@
                     <td class="currency price">100.00</td>
                     <td class="currency qty">1</td>
                     <td class="currency total">100.00</td>
-                </tr>
+                </tr> -->
             </tbody>
             <tfoot>
                 <tr>
                     <td class="label summarry" colspan="3">Total</td>
-                    <td class="currency grand-total">400.00</td>
+                    <td class="currency grand-total" id="grand_total">0.00</td>
                 </tr>
             </tfoot>
         </table>
@@ -101,6 +101,9 @@
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.
         </p>
+    </div>
+    <div class="btn-container">
+        <button id="save" class="btn save green" onclick="save()">Save as PDF</button>
     </div>
     <script src="../js/bs.js"></script>
 </body>
