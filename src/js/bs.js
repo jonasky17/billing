@@ -90,12 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function save() {
     let yourDate = new Date()
     let final_date = yourDate.toISOString().split('T')[0]
-    // const fs = require("fs");
-    fs.writeFile(json_data.customer_name+final_date+".json",json_data,(error)=>{
-        if(error){
-            console.log(error);
-            throw error;
-        }
-    });
-    console.log(final_date);
+   const a = document.createElement("a");
+   a.href = URL.createObjectURL(new Blob([JSON.stringify(json_data, null, 2)], {type:"application/json"}));
+   a.setAttribute("download", json_data.customer_name+final_date+".json");
+   document.body.appendChild(a);
+   a.click();
+   document.body.removeChild(a);
+   window.print();
 }

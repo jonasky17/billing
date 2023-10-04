@@ -3,8 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 /* END FONTS */
 
+
+.header-img-container{
+    text-align: center;
+}
+
 .header-img {
-    height: 80px;
+    height: 50px;
+    /* width:200px */
 }
 
 .bs__header.container {
@@ -13,15 +19,15 @@
 }
 
 .header-img-container {
-    width: 25%;
+    width: 20%;
 }
 
 .header-co-details-container {
-    width: 50%;
+    width: 40%;
 }
 
 .header-billing-details-container {
-    width: 25%;
+    width: 40%;
     text-align: right;
 }
 
@@ -33,18 +39,19 @@ p {
 .co-name {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .label {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .text {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
+    font-size: 12px;
 }
 
 .tbl.particulars {
@@ -53,11 +60,13 @@ p {
 
 .currency {
     font-family: 'Roboto Mono', monospace;
+    font-size:12px;
 }
 
 .tbl-header{
     text-align: center;
-    font-size: 20px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .currency.price{
@@ -75,11 +84,12 @@ p {
 .currency.grand-total{
     font-weight: 500;
     text-align: right;
+
 }
 
 .label.summarry{
     text-align: right;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .tbl-header.desc{
@@ -146,4 +156,36 @@ p {
 .btn-container{
     text-align: right;
     margin-top:24px;
+}
+
+#customer_name{
+    font-weight: 700;
+}
+
+.customer-details{
+    margin-top:24px;
+}
+
+.wrapper{
+    /* height: 842px;
+    width: 595px; */
+}
+.body { height:297mm; width:210mm; margin-left:auto; margin-right:auto; }
+
+/* @page{
+    size: 21cm 29.7cm;
+    margin-left:auto;
+    margin-right:auto;
+} */
+
+@media print{
+    #save{
+        display:none;
+    }
+
+    .tbl.particulars>thead{
+        -webkit-print-color-adjust: exact;
+        background: #6ba4ff !important;
+        print-color-adjust: exact; 
+    }
 }
