@@ -203,6 +203,10 @@ p {
     font-family: 'Open Sans', sans-serif;
     font-size:12px;
 }
+
+.upper-case{
+    text-transform: uppercase;
+}
 @media print{
     #save{
         display:none;

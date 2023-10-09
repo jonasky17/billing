@@ -1,5 +1,32 @@
 // import * as fs from 'fs';
 var json_data = [];
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'PHP',
+
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+});
+
+const currencyFractionDigits = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'PHP',
+}).resolvedOptions().maximumFractionDigits;
+
+// const value = (12345.678).toLocaleString('de-DE', {
+//     maximumFractionDigits: currencyFractionDigits 
+// });
+
+const options = { 
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2 
+  };
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
 document.addEventListener("DOMContentLoaded", () => {
     const get_data = localStorage.getItem("billing_data");
     const data = JSON.parse(get_data);
@@ -52,7 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
         var new_td_price = document.createElement("td");
         new_td_price.classList.add("currency");
         new_td_price.classList.add("price");
-        new_td_price.innerHTML = data.items[i].price;
+        // new_td_price.innerHTML = data.items[i].price;
+        let val_price = Number(data.items[i].price);
+        new_td_price.innerHTML = (val_price).toLocaleString('en-US',options);
+        // new_td_price.innerHTML = numberWithCommas(val_price);
         new_tr.appendChild(new_td_price);
 
         var new_td_qty = document.createElement("td");
@@ -65,6 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
         new_td_total.classList.add("currency");
         new_td_total.classList.add("total");
         new_td_total.innerHTML = data.items[i].total;
+        let val_total = Number(data.items[i].total);
+        new_td_total.innerHTML = (val_total).toLocaleString('en-US',options);
         new_tr.appendChild(new_td_total);
 
         var get_body = document.getElementById("bs_items");
@@ -72,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         compute_total += Number(data.items[i].total);
         var get_grand_total = document.getElementById("grand_total");
-        get_grand_total.innerHTML = compute_total;
+        get_grand_total.innerHTML = formatter.format(Number(compute_total));
         console.log(data.items[i].total)
         console.log(compute_total);
     }
@@ -97,4 +129,15 @@ function save() {
    a.click();
    document.body.removeChild(a);
    window.print();
+}
+
+function currency(v){
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      
+        // These options are needed to round to whole numbers if that's what you want.
+        //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+      });
 }
